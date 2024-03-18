@@ -12,31 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Function to display search results in the UI
-function displaySearchResults(searchResults) {
-    const searchResultsContainer = document.querySelector('.search-results-container');
-    searchResultsContainer.innerHTML = ''; // Clear previous search results
-
-    searchResults.forEach(result => {
-        const resultElement = document.createElement('div');
-        resultElement.classList.add('search-result');
-
-        const nameElement = document.createElement('h3');
-        nameElement.textContent = result.name;
-
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = result.description;
-
-        // Add more elements for additional information if needed
-
-        resultElement.appendChild(nameElement);
-        resultElement.appendChild(descriptionElement);
-
-        searchResultsContainer.appendChild(resultElement);
-    });
-}
-
-
-    // Function to display search results in the UI
     function displaySearchResults(results) {
         // Clear previous search results
         const searchResultsContainer = document.querySelector('.search-results-container');
@@ -59,9 +34,6 @@ function displaySearchResults(searchResults) {
         });
     }
 
-   
-
-
     // Example usage: fetching detailed information about a specific object
     const xid = "Q372040";
     const lang = "en";
@@ -79,4 +51,114 @@ function displaySearchResults(searchResults) {
         .catch(error => {
             console.error("Error:", error);
         });
+
+    // Get itinerary list element
+    const itineraryList = document.getElementById('itinerary-list');
+
+    // Function to display existing itinerary items
+    function displayItineraryItems() {
+        // Retrieve itinerary items from local storage or database
+        const itineraryItems = JSON.parse(localStorage.getItem('itineraryItems')) || [];
+
+        // Clear existing items
+        itineraryList.innerHTML = '';
+
+        // Loop through itinerary items and create HTML elements
+        itineraryItems.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = item;
+
+            // Add edit and delete buttons
+            const editButton = createButton('Edit', () => editItem(index));
+            const deleteButton = createButton('Delete', () => deleteItem(index));
+
+            li.appendChild(editButton);
+            li.appendChild(deleteButton);
+
+            itineraryList.appendChild(li);
+        });
+    }
+
+    // Function to create a button with specified text and click handler
+    function createButton(text, onClick) {
+        const button = document.createElement('button');
+        button.textContent = text;
+        button.addEventListener('click', onClick);
+        return button;
+    }
+
+    // Function to add a new itinerary item
+    function addItemToItinerary(newItem) {
+        // Retrieve existing itinerary items
+        const itineraryItems = JSON.parse(localStorage.getItem('itineraryItems')) || [];
+
+        // Add the new item
+        itineraryItems.push(newItem);
+
+        // Save the updated itinerary items to local storage
+        localStorage.setItem('itineraryItems', JSON.stringify(itineraryItems));
+
+        // Re-display the itinerary items
+        displayItineraryItems();
+    }
+
+    // Function to edit an existing itinerary item
+    function editItem(index) {
+        // Retrieve existing itinerary items
+        const itineraryItems = JSON.parse(localStorage.getItem('itineraryItems')) || [];
+
+        // Prompt the user to enter the new item
+        const newItem = prompt('Enter the new item:');
+
+        // Update the item if the input is not empty
+        if (newItem !== null && newItem !== '') {
+            itineraryItems[index] = newItem;
+
+            // Save the updated itinerary items to local storage
+            localStorage.setItem('itineraryItems', JSON.stringify(itineraryItems));
+
+            // Re-display the itinerary items
+            displayItineraryItems();
+        }
+    }
+
+    // Function to delete an existing itinerary item
+    function deleteItem(index) {
+        // Retrieve existing itinerary items
+        const itineraryItems = JSON.parse(localStorage.getItem('itineraryItems')) || [];
+
+        // Remove the item at the specified index
+        itineraryItems.splice(index, 1);
+
+        // Save the updated itinerary items to local storage
+        localStorage.setItem('itineraryItems', JSON.stringify(itineraryItems));
+
+        // Re-display the itinerary items
+        displayItineraryItems();
+    }
+
+    // Event listener for adding a new itinerary item
+    document.getElementById('add-item-btn').addEventListener('click', () => {
+        const newItem = prompt('Enter a new itinerary item:');
+        if (newItem !== null && newItem !== '') {
+            addItemToItinerary(newItem);
+        }
+    });
+
+    // Display itinerary items when the page loads
+    displayItineraryItems();
 });
+
+// Add event listener to the "My Itinerary" button
+const myItineraryButton = document.querySelector('#my-itinerary-button');
+myItineraryButton.addEventListener('click', navigateToItinerary);
+
+// Define the handler function for navigating to the itinerary page
+function navigateToItinerary(event) {
+    // Prevent the default behavior of the button (e.g., submitting a form)
+    event.preventDefault();
+
+    // Implement the navigation logic here
+    // For example, you can change the URL to the itinerary page
+    window.location.href = '/itinerary.html';
+}

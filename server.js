@@ -9,6 +9,12 @@ const app = express();
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Define route for serving itinerary.js with correct MIME type
+app.get('/itinerary.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'itinerary.js'));
+});
+
+
 // Define API endpoints
 const BASE_URL = "https://api.opentripmap.com/0.1";
 const PLACES_GEONAME_ENDPOINT = "/{lang}/places/geoname";
