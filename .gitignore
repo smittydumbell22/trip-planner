@@ -1,0 +1,41 @@
+# Node.js dependencies
+node_modules/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Compiled files
+dist/
+build/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled binaries or executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Log files
+*.log
+
+# Backup files
+*~
+
+# macOS
+.DS_Store
+
+# Thumbnails
+Thumbs.db
+
+# Ignore package-lock.json for npm
+package-lock.json
+
+# Ignore yarn lockfile
+yarn.lock

@@ -1,0 +1,189 @@
+/* styles.css */
+
+/* Reset default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Navigation bar styles */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Destination details section styles */
+.destination-details {
+    margin: 20px;
+}
+
+.destination-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.destination-info h3 {
+    margin-bottom: 10px;
+}
+
+.destination-info p {
+    margin-bottom: 5px;
+}
+
+.destination-info span {
+    font-weight: bold;
+}
+
+/* Search results section styles */
+.search-results {
+    margin: 20px;
+}
+
+.search-results h2 {
+    margin-bottom: 10px;
+}
+
+.search-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.search-result {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search-result h3 {
+    margin-bottom: 5px;
+}
+
+.search-result p {
+    margin-bottom: 5px;
+}
+
+.search-result img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Filter panel styles */
+.filter-panel {
+    margin: 20px;
+}
+
+.filter-panel h2 {
+    margin-bottom: 10px;
+}
+
+.filter-panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.filter-panel li {
+    margin-bottom: 10px;
+}
+
+.filter-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Search section styles */
+.search-section {
+    margin: 20px;
+}
+
+#search-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+#search-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Search results section styles */
+.search-results {
+    margin: 20px;
+}
+
+.search-results h2 {
+    margin-bottom: 10px;
+}
+
+.search-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.search-result {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search-result h3 {
+    margin-bottom: 5px;
+}
+
+.search-result p {
+    margin-bottom: 5px;
+}
