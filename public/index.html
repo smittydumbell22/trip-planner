@@ -24,12 +24,14 @@
         <section class="filter-panel">
             <h2>Filter Results</h2>
             <ul>
-                <li><button class="filter-button active" data-category="attractions">Attractions</button></li>
-                <li><button class="filter-button" data-category="hotels">Hotels</button></li>
-                <li><button class="filter-button" data-category="restaurants">Restaurants</button></li>
+                <!-- HTML for buttons -->
+                <button class="filter-button active common-button" data-category="attractions">Attractions</button>
+                <button class="filter-button common-button" data-category="hotels">Hotels</button>
+                <button class="filter-button common-button" data-category="restaurants">Restaurants</button>
+
             </ul>
         </section>
-        
+
         <section class="destination-details">
             <h2>Destination Details</h2>
             <div class="destination-info">
@@ -48,10 +50,11 @@
 
         <section class="search-section">
             <input type="text" id="search-input" placeholder="Enter a destination, attraction, or keyword">
-            <button id="search-button">Search</button>
+            <button id="search-button" class="common-button">Search</button>
+            
         </section>
 
-       
+
         <!-- Other sections of your page here -->
     </main>
 
@@ -62,7 +65,7 @@
     <script src="script.js"></script>
     <script>
         // JavaScript for updating dynamic content in the header and footer
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Update header title dynamically
             const headerTitle = document.getElementById('header-title');
             headerTitle.textContent = 'Welcome to Trip Planner';

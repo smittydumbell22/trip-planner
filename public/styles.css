@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset default browser styles */
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
@@ -8,8 +6,8 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 
 /* Basic styling for header */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #1e272e; /* Dark Grayish Blue */
+    color: #fff; /* White */
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -35,15 +33,15 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* White */
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 nav ul li a.active {
-    background-color: #fff;
-    color: #333;
+    background-color: #fff; /* White */
+    color: #1e272e; /* Dark Grayish Blue */
 }
 
 /* Destination details section styles */
@@ -98,11 +96,6 @@ nav ul li a.active {
     margin-bottom: 5px;
 }
 
-.search-result img {
-    width: 100%;
-    border-radius: 5px;
-}
-
 /* Filter panel styles */
 .filter-panel {
     margin: 20px;
@@ -130,8 +123,8 @@ nav ul li a.active {
 }
 
 .filter-button.active {
-    background-color: #333;
-    color: #fff;
+    background-color: #1e272e; /* Dark Grayish Blue */
+    color: #fff; /* White */
 }
 
 /* Search section styles */
@@ -159,35 +152,6 @@ nav ul li a.active {
     background-color: #e0e0e0;
 }
 
-/* Search results section styles */
-.search-results {
-    margin: 20px;
-}
-
-.search-results h2 {
-    margin-bottom: 10px;
-}
-
-.search-results-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
-.search-result {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.search-result h3 {
-    margin-bottom: 5px;
-}
-
-.search-result p {
-    margin-bottom: 5px;
-}
-
 /* My Itinerary button styles */
 #my-itinerary-button {
     background-color: #4CAF50; /* Green */
@@ -201,4 +165,83 @@ nav ul li a.active {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+/* Body background color */
+body {
+    background-color: #f5f6fa; /* Light Lavender Gray */
+}
+
+/* Header background and text color */
+header {
+    background-color: #74b9ff; /* Sky Blue */
+    color: #fff; /* White */
+}
+
+/* Navigation link color */
+nav a {
+    color: #fff; /* White */
+}
+
+/* Main section background color */
+main {
+    background-color: #fff; /* White */
+}
+
+/* Button background and text color */
+button {
+    background-color: #2ecc71; /* Vibrant Green */
+    color: #fff; /* White */
+}
+
+/* Input field border color */
+input[type="text"] {
+    border: 1px solid #3498db; /* Calming Blue */
+}
+
+/* Itinerary list item background color */
+#itinerary-list li {
+    background-color: #f1c40f; /* Sunny Yellow */
+}
+
+/* Button hover animation */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* My Itinerary button hover animation */
+#my-itinerary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for buttons */
+.filter-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.filter-button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.common-button {
+    background-color: #3498db; /* Calming Blue */
+    color: #fff; /* White */
+}
+
+#search-button.common-button {
+    background-color: #3498db; /* Calming Blue */
+    color: #fff; /* White */
 }

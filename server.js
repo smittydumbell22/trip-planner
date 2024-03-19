@@ -24,6 +24,13 @@ const PLACES_AUTOSUGGEST_ENDPOINT = "/{lang}/places/autosuggest";
 const PLACES_XID_ENDPOINT = "/{lang}/places/xid/{xid}";
 const API_KEY = "5ae2e3f221c38a28845f05b64d4565925b923c98a0618216eb198d11";
 
+// Define the second API key
+///const url = `https://api.example.com/data?key=${SECOND_API_KEY}`;
+//const SECOND_API_KEY = "9AAC5EFAC34A49289088332C23E09785";
+
+
+
+
 // Define route for fetching detailed information about a specific object
 app.get('/api/places/:xid', async (req, res) => {
     const xid = req.params.xid;
